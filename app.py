@@ -122,7 +122,35 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+botStyle="https://agent.d-id.com/1.0.0-beta.77/style.css"
+botSrc="https://agent.d-id.com/1.0.0-beta.77/index.js"
+datClientKey="Z29vZ2xlLW9hdXRoMnwxMDM5MDM0MDIyODc2ODA5NDE3MTc6elI3ZFMzcTVMM3pZRnlYRHZ5dGdZ"
+dataName="did-agent"
+dataMode="fabio"
+dataAgentId="agt_t9HmTkOg"
+rel="stylesheet"
 
+html_content = f"""
+<html lang="en">
+
+<head>
+  <link rel={rel} href={botStyle}/>
+  <script type="module" src={botSrc} data-name={dataName} data-mode={dataMode}
+    data-client-key={datClientKey}
+    data-agent-id={dataAgentId}>
+    </script>
+</head>
+
+<body>
+  
+ 
+</body>
+
+</html>
+"""
+
+# Display the HTML content
+st.markdown(html_content, unsafe_allow_html=True)
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
