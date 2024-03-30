@@ -7,3 +7,5 @@ streamlit
 tiktoken
 qdrant-client
 pypdf
+openai
+base64
