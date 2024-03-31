@@ -137,35 +137,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-botStyle="https://agent.d-id.com/1.0.0-beta.77/style.css"
-botSrc="https://agent.d-id.com/1.0.0-beta.77/index.js"
-datClientKey="Z29vZ2xlLW9hdXRoMnwxMDM5MDM0MDIyODc2ODA5NDE3MTc6elI3ZFMzcTVMM3pZRnlYRHZ5dGdZ"
-dataName="did-agent"
-dataMode="fabio"
-dataAgentId="agt_t9HmTkOg"
-rel="stylesheet"
 
-html_content = f"""
-<html lang="en">
-
-<head>
-  <link rel={rel} href={botStyle}/>
-  <script type="module" src={botSrc} data-name={dataName} data-mode={dataMode}
-    data-client-key={datClientKey}
-    data-agent-id={dataAgentId}>
-    </script>
-</head>
-
-<body>
-  
- 
-</body>
-
-</html>
-"""
-
-# Display the HTML content
-st.markdown(html_content, unsafe_allow_html=True)
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
@@ -194,7 +166,7 @@ if user_query is not None and user_query != "":
         st.markdown(user_query)
     with st.chat_message("AI", avatar="🤖"):
         response=st.write_stream(get_response(user_query))
-        response_audio_file = "audio_response.mp3"
+        response_audio_file = "audio_response1.mp3"
         text_to_audio(client, response, response_audio_file)
         autoplay_audio(response_audio_file)
         st.session_state.chat_history.append(AIMessage(content=response))
