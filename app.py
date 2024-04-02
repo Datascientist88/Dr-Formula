@@ -152,8 +152,8 @@ for message in st.session_state.chat_history:
     if isinstance(message, AIMessage):
         with st.chat_message("AI", avatar="🤖"):
             st.write(message.content)
-            text_to_audio(client, message.content, response_audio_file)
-            st.audio(response_audio_file)
+    
+        
     elif isinstance(message, HumanMessage):
         with st.chat_message("Human", avatar="👨‍⚕️"):
             st.write(message.content)
